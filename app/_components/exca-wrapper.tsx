@@ -27,6 +27,7 @@ const ExcalidrawWrapper: React.FC = ({ sh }: { sh?: string }) => {
       console.log(window.location.href);
       if (sh && excalidrawAPI) {
         const sceneData = JSON.parse(atob(sh));
+        sceneData.appState.collabolators = [];
         excalidrawAPI?.updateScene(sceneData);
       }
     });
